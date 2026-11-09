@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhysioMotion 3D - Registro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Añadimos una clase extra para el borde rosado brillante de tu mockup -->
+    <div class="app-container border-pink">
+        <h2 class="title-registro">FORMULARIO DE<br>REGISTRO</h2>
+        
+        <div class="form">
+            <input type="text" placeholder="Nombres y apellidos">
+            
+            <!-- Truco HTML: Muestra texto normal, pero al hacer clic abre el calendario -->
+            <input type="text" placeholder="Fecha de nacimiento" onfocus="(this.type='date')" onblur="(this.type='text')">
+            
+            <input type="email" placeholder="Correo electrónico">
+            <input type="password" placeholder="Contraseña">
+            
+            <select class="custom-select">
+                <option value="" disabled selected>Tipo de usuario (Paciente/Deportista/Fisioterapeuta)</option>
+                <option value="paciente">Paciente</option>
+                <option value="deportista">Deportista</option>
+                <option value="fisioterapeuta">Fisioterapeuta</option>
+            </select>
+
+            <!-- Botón de mockup que lleva al dashboard sin validar -->
+            <a href="dashboard.html" class="btn-pink">REGISTRARME</a>
+        </div>
+    </div>
+</body>
+</html>
