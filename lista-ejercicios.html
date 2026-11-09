@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhysioMotion 3D - Ejercicios</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container border-cyan-container">
+        <!-- Encabezado para volver -->
+        <div class="header-dashboard">
+            <a href="dashboard.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver</a>
+            <h2 style="text-transform: uppercase; font-size: 1.1rem; letter-spacing: 1px;">Biblioteca</h2>
+        </div>
+
+        <!-- Buscador funcional -->
+        <div class="buscador-container">
+            <input type="text" id="buscador" placeholder="Buscar ejercicio (ej. Sentadilla)..." class="input-buscador" onkeypress="buscarEjercicio(event)">
+            <i class="fa-solid fa-magnifying-glass icono-lupa"></i>
+        </div>
+
+        <!-- Categorías como botones -->
+        <div class="caja-info borde-pink">
+            <h3 class="titulo-caja text-pink">Categorías propuestas:</h3>
+            <div class="grid-categorias">
+                <a href="categoria.html" class="btn-categoria">• Movilidad articular</a>
+                <a href="categoria.html" class="btn-categoria">• Fortalecimiento muscular</a>
+                <a href="categoria.html" class="btn-categoria">• Ejercicios isométricos</a>
+                <a href="categoria.html" class="btn-categoria">• Concéntricos / Excéntricos</a>
+                <a href="categoria.html" class="btn-categoria">• Equilibrio y propiocepción</a>
+                <a href="categoria.html" class="btn-categoria">• Coordinación y control motor</a>
+            </div>
+        </div>
+
+        <!-- Contenedor Cian: Procedimiento -->
+        <div class="caja-info borde-cyan">
+            <h3 class="titulo-caja text-cyan">Procedimiento de búsqueda:</h3>
+            <ol class="lista-numerada">
+                <li>Seleccionar "Ejercicios".</li>
+                <li>Elegir una categoría o usar el buscador.</li>
+                <li>Seleccionar el ejercicio deseado y abrir la demostración 3D.</li>
+            </ol>
+        </div>
+
+        <!-- Botón corregido (ya no se estira) -->
+        <a href="rutina.html" class="btn-block-pink">ABRIR EJEMPLO: SENTADILLA 3D</a>
+    </div>
+
+    <!-- Lógica del buscador simulado -->
+    <script>
+        function buscarEjercicio(event) {
+            // Si el usuario presiona la tecla "Enter"
+            if (event.key === "Enter") {
+                const query = document.getElementById("buscador").value.toLowerCase();
+                
+                // Si escribe "sentadilla", lo manda directo al 3D
+                if (query.includes("sentadilla")) {
+                    window.location.href = "rutina.html";
+                } else {
+                    // Para cualquier otra búsqueda, lo manda a la lista de resultados
+                    window.location.href = "categoria.html";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
