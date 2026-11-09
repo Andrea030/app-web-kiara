@@ -6,35 +6,33 @@
     <title>Dashboard - PhysioMotion 3D</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="app-container">
-        <!-- Nuevo encabezado con el icono de perfil -->
+    <div class="app-container border-cyan-container">
+        <!-- Encabezado con icono de perfil -->
         <div class="header-dashboard">
             <div>
-                <h2>Ejercicios</h2>
-                <p>Selecciona una categoría</p>
+                <h2 style="text-transform: uppercase; font-size: 1.2rem; letter-spacing: 1px;">Panel Principal</h2>
             </div>
             <a href="perfil.html" class="icono-perfil">
                 <i class="fa-solid fa-circle-user"></i>
             </a>
         </div>
         
-        <div class="menu-ejercicios">
-            <a href="rutina.html" class="card-ejercicio">
-                <h3>Movilidad Articular</h3>
-                <p>Sentadilla a silla (3D)</p>
-            </a>
-            <a href="#" class="card-ejercicio">
-                <h3>Isométricos</h3>
-                <p>Elevación de talones</p>
-            </a>
-        </div>
-
-        <div class="bottom-nav">
-            <span>🏠 Inicio</span>
-            <span>💪 Ejercicios</span>
-            <span>📈 Progreso</span>
+        <!-- Cuadrícula con las 8 opciones -->
+        <div class="grid-dashboard">
+            <a href="#" class="btn-grid borde-cyan">INICIO</a>
+            <a href="rutina.html" class="btn-grid borde-pink">EJERCICIOS</a>
+            
+            <a href="#" class="btn-grid borde-cyan">MIS RUTINAS</a>
+            <a href="#" class="btn-grid borde-orange">MI PROGRESO</a>
+            
+            <a href="rutina.html" class="btn-grid borde-pink">ANATOMÍA 3D</a>
+            <a href="#" class="btn-grid borde-cyan">EDUCACIÓN</a>
+            
+            <a href="perfil.html" class="btn-grid borde-pink">PERFIL</a>
+            <a href="#" class="btn-grid borde-orange">PROFESIONAL</a>
         </div>
     </div>
 </body>
