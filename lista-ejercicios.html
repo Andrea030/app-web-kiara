@@ -15,23 +15,23 @@
             <h2 style="text-transform: uppercase; font-size: 1.1rem; letter-spacing: 1px;">Biblioteca</h2>
         </div>
 
-        <!-- Buscador funcional -->
+        <!-- Buscador funcional en tiempo real -->
         <div class="buscador-container">
-            <input type="text" id="buscador" placeholder="Buscar ejercicio (ej. Sentadilla)..." class="input-buscador" onkeypress="buscarEjercicio(event)">
+            <input type="text" id="buscador" placeholder="Buscar categoría..." class="input-buscador" onkeyup="filtrarCategorias()">
             <i class="fa-solid fa-magnifying-glass icono-lupa"></i>
         </div>
 
         <!-- Categorías como botones -->
         <div class="caja-info borde-pink">
             <h3 class="titulo-caja text-pink">Categorías propuestas:</h3>
-            <div class="grid-categorias">
-                <a href="categoria.html" class="btn-categoria">• Movilidad articular</a>
-                <a href="categoria.html" class="btn-categoria">• Fortalecimiento muscular</a>
-                <a href="categoria.html" class="btn-categoria">• Ejercicios isométricos</a>
-                <a href="categoria.html" class="btn-categoria">• Concéntricos / Excéntricos</a>
-                <a href="categoria.html" class="btn-categoria">• Equilibrio y propiocepción</a>
-                <a href="categoria.html" class="btn-categoria">• Coordinación y control motor</a>
-            </div>
+            <div class="grid-categorias" id="listaCategorias">
+            <a href="movilidad.html" class="btn-categoria">• Movilidad articular</a>
+            <a href="fortalecimiento.html" class="btn-categoria">• Fortalecimiento muscular</a>
+            <a href="isometricos.html" class="btn-categoria">• Ejercicios isométricos</a>
+            <a href="concentricos.html" class="btn-categoria">• Concéntricos / Excéntricos</a>
+            <a href="equilibrio.html" class="btn-categoria">• Equilibrio y propiocepción</a>
+            <a href="coordinacion.html" class="btn-categoria">• Coordinación y control motor</a>
+        </div>
         </div>
 
         <!-- Contenedor Cian: Procedimiento -->
@@ -43,26 +43,28 @@
                 <li>Seleccionar el ejercicio deseado y abrir la demostración 3D.</li>
             </ol>
         </div>
-
-        <!-- Botón corregido (ya no se estira) -->
-        <a href="rutina.html" class="btn-block-pink">ABRIR EJEMPLO: SENTADILLA 3D</a>
+        
+        <!-- El botón gigante del ejemplo 3D fue eliminado -->
     </div>
 
-    <!-- Lógica del buscador simulado -->
+    <!-- Script para filtrar las categorías en tiempo real -->
     <script>
-        function buscarEjercicio(event) {
-            // Si el usuario presiona la tecla "Enter"
-            if (event.key === "Enter") {
-                const query = document.getElementById("buscador").value.toLowerCase();
+        function filtrarCategorias() {
+            // Obtener el texto que se está escribiendo y pasarlo a minúsculas
+            const textoBuscado = document.getElementById("buscador").value.toLowerCase();
+            // Obtener todos los botones de la lista de categorías
+            const categorias = document.querySelectorAll(".btn-categoria");
+
+            // Revisar cada botón para ver si coincide con la búsqueda
+            categorias.forEach(categoria => {
+                const textoCategoria = categoria.textContent.toLowerCase();
                 
-                // Si escribe "sentadilla", lo manda directo al 3D
-                if (query.includes("sentadilla")) {
-                    window.location.href = "rutina.html";
+                if (textoCategoria.includes(textoBuscado)) {
+                    categoria.style.display = "flex"; // Lo muestra si coincide
                 } else {
-                    // Para cualquier otra búsqueda, lo manda a la lista de resultados
-                    window.location.href = "categoria.html";
+                    categoria.style.display = "none"; // Lo oculta si no coincide
                 }
-            }
+            });
         }
     </script>
 </body>
